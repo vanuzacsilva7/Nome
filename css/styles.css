@@ -1,0 +1,1032 @@
+/* ==========================================
+Arquivo: styles.css
+Descrição: Estilos principais do Simulado SC-900
+========================================== */
+
+/* ==========================================
+Reset básico
+========================================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+Container principal
+========================================== */
+.container {
+  margin: 80px auto 30px auto;
+  padding: 30px;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+/* ==========================================
+Sidebar
+========================================== */
+.sidebar {
+  width: 250px;
+  height: 600px;
+  position:relative;
+  
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar li.active {
+  background-color: #e0f7fa;
+  border-left: 5px solid gold;
+  font-weight: bold;
+}
+
+
+/* ==========================================
+Sidebar da direita
+========================================== */
+.sidebarDireita {
+  width: 200px;
+  height: 600px;
+  position:relative;
+  color:#000;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.sidebarDireita a {
+  text-decoration: none;
+  color:#000;
+}
+
+
+
+.sidebarDireita ul {
+  list-style: none;
+  padding: 0;
+  background-color: #ececec;
+  border-left: 5px solid rgb(167, 166, 166);
+  
+  padding: 8px;
+}
+
+.sidebarDireita li {
+  list-style: none;
+  padding: 0;
+  background-color: #e0f7fa;
+  border-left: 5px solid gold;
+  
+  padding: 8px;
+}
+
+.sidebarDireita li:hover {
+  background-color: #ececec;
+}
+
+.sidebarDireita li.active {
+  background-color: #e0f7fa;
+  border-left: 5px solid gold;
+  
+}
+
+
+
+
+/* ==========================================
+Bandeira de marcação
+========================================== */
+.bandeira {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ccc;
+  margin-right: 8px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.bandeira.marcada {
+  background-color: gold;
+  border-color: gold;
+}
+
+/* ==========================================
+Área de conteúdo principal
+========================================== */
+.content {
+  flex-grow: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 750px;
+  
+
+}
+
+.questao-imagem {    
+    width: 100%;
+    height: 100%;   
+    object-fit: cover; /* ou 'contain' dependendo do efeito desejado */
+ 
+}
+
+.question-header h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+  width: 100%;
+    height: 100%;
+}
+
+.answers label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* ==========================================
+Botões gerais
+========================================== */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-confirmar {
+  background-color: #2d6cdf;
+  color: white;
+}
+
+.btn-voltar,
+.btn-proxima,
+.btn-finalizar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-voltar {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Botões de Resultado Final e Revisão */
+.btn-reiniciar,
+.btn-revisar,
+.btn-revisar-reiniciar {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 200px;
+  margin: 5px;
+}
+
+.btn-reiniciar,
+.btn-revisar-reiniciar {
+  background-color: #ffc107;
+  color: black;
+}
+
+.btn-revisar {
+  background-color: #28a745;
+  color: black;
+}
+
+.btn-revisar:hover {
+  background-color: #1b6e2f;
+}
+
+/* Alinhar botões lado a lado */
+.botoes-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+
+/* ==========================================
+Feedback
+========================================== */
+.feedback {
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 30px;
+}
+
+.feedback.correct {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #155724;
+  padding: 40px;
+}
+
+.feedback.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #721c24;
+  padding: 40px;
+}
+
+.feedback.partial {
+  background-color: #fff3cd;
+  /* amarelo claro */
+  color: #856404;
+  border: 1px solid #856404;
+  padding: 40px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ==========================================
+Resultado final
+========================================== */
+.results {
+  text-align: center;
+}
+
+.results h2 {
+  color: #222;
+  font-size: 24px;
+}
+
+.results p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* ==========================================
+Tabela para sim/nao
+========================================== */
+.tabela-simnao {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.tabela-simnao th,
+.tabela-simnao td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tabela-simnao th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tabela-simnao td:nth-child(2),
+.tabela-simnao td:nth-child(3),
+.tabela-simnao th:nth-child(2),
+.tabela-simnao th:nth-child(3) {
+  text-align: center;
+}
+
+.tabela-simnao tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-simnao input[type="radio"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+/* ==========================================
+Opções de resposta (única e múltipla)
+========================================== */
+.opcoes {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.opcoes li {
+  margin-bottom: 10px;
+}
+
+.opcoes label {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.opcoes label:hover {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+.opcoes input[type="radio"],
+.opcoes input[type="checkbox"] {
+  margin-right: 12px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* ==========================================
+Drag & Drop
+========================================== */
+.drag-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.draggable {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px dashed #bbb;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 14px;
+}
+
+.draggable:hover {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+.draggable.dragging {
+  opacity: 0.7;
+  cursor: grabbing;
+}
+
+.drag-drop-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.drag-drop-table th,
+.drag-drop-table td {
+  padding: 12px 20px;
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+.drag-drop-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.dropzone {
+  min-height: 40px;
+  background-color: #ffffff;
+  border: 2px dashed #bbb;
+  border-radius: 6px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dropzone.drag-over {
+  background-color: #e0f7fa;
+  border-color: #00bcd4;
+}
+
+.dropzone.filled {
+  border-style: solid;
+  background-color: #e6f7ff;
+}
+
+.feedback-borda {
+  display: block;
+  margin: 20px;
+  padding: 6px 12px;
+  border: 2px dashed currentColor;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.363);
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* ==========================================
+Combobox (Select)
+========================================== */
+/*
+.select-container {
+  margin-top: 20px;
+}
+
+select[name="resposta"] {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+select[name="resposta"]:hover {
+  border-color: #bbb;
+}
+
+select[name="resposta"]:focus {
+  border-color: #2d6cdf;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(45, 108, 223, 0.2);
+}
+
+*/
+
+/* ==========================================
+Cronômetro
+========================================== */
+#cronometroContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  z-index: 9999;
+}
+
+/* ==========================================
+Gráficos
+========================================== */
+#graficoResultado {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+}
+
+#graficoDominio {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+}
+
+
+/* ==========================================
+Ajustes Específicos para a Revisão de Questões
+========================================== */
+
+.revisao-questoes h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  color: #333;
+}
+
+.revisao-questoes .feedback {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  padding: 40x;
+}
+
+.revisao-questoes .feedback.correct {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #155724;
+  padding: 40x;
+}
+
+.revisao-questoes .feedback.partial {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #856404;
+  padding: 40x;
+}
+
+.revisao-questoes .feedback.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #721c24;
+  padding: 40x;
+}
+
+
+/* ==========================================
+Barra de Progresso das questões
+========================================== */
+
+#progressoContainer {
+  margin: 20px auto 10px auto;
+  padding: 0 20px;
+  max-width: 1000px;
+}
+
+#textoProgresso {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+  text-align: left;
+}
+
+.barra-externa {
+  width: 100%;
+  height: 15px;
+  /* mesma grossura que você pediu */
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.barra-interna {
+  height: 100%;
+  width: 0%;
+  background-color: #007bff;
+  /* azul padrão */
+  transition: width 0.4s ease;
+}
+
+/* ==========================================
+Rodapé
+========================================== */
+.rodape {
+  margin-top: 60px;
+  padding: 30px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+.legenda-feedback h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.legenda-feedback ul {
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+}
+
+.legenda-feedback li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.cor-legenda {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+
+.cor-legenda.verde {
+  background-color: #28a745;
+}
+
+.cor-legenda.amarelo {
+  background-color: #ffc107;
+}
+
+.cor-legenda.vermelho {
+  background-color: #dc3545;
+}
+
+.creditos-desenvolvedor {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.creditos-desenvolvedor a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.creditos-desenvolvedor a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================
+Botão Reportar Problema
+========================================== */
+.btn-reportar-flutuante {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  padding: 12px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.btn-reportar-flutuante:hover {
+  background-color: #e0e0e0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+
+}
+
+.modal-content #textoProblema {
+  width: 100%;
+
+}
+
+.botoes-modal button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botoes-modal button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.botoes-modal button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #555;
+}
+
+.modal-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+}
+
+
+/* ==========================================
+Botão fechar insade
+========================================== */
+
+.toggle-sidebar {
+  position: relative;
+  /*   top: 50%;
+  left: 250px; /* Mesmo tamanho da sua sidebar inicialmente */
+  /*  margin-top: -290px;  */
+
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: left 0.3s ease, transform 0.3s ease;
+}
+
+.arrow-close {
+  transform: rotateY(0deg);
+}
+
+.arrow-open {
+  transform: rotateY(180deg);
+}
+
+.sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 0px;
+}
+
+.content.expandido {
+  margin-left: 0;
+}
+
+
+
+/* ==========================================
+Botão fechar insadeDireita
+========================================== */
+
+.toggle-sidebarDireita {
+  position: relative;
+  /*   top: 50%;
+  left: 250px; /* Mesmo tamanho da sua sidebar inicialmente */
+  /*  margin-top: -290px;  */
+
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: left 0.3s ease, transform 0.3s ease;
+}
+
+.arrow-closeDireita {
+  transform: rotateY(180deg);
+}
+
+.arrow-openDireita {
+  
+  transform: rotateY(0deg);
+}
+
+.sidebarDireita {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.sidebarDireita.hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 0px;
+}
+
+.content.expandido {
+  margin-left: 0;
+}
+
+
+/* ==========================================
+Estilo Comboboxs
+========================================== */
+
+.select-container {
+  margin-top: 20px;
+}
+
+select[name^="combo-"],
+select[id^="combo-"] {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+select[name^="combo-"]:hover,
+select[id^="combo-"]:hover {
+  border-color: #bbb;
+}
+
+select[name^="combo-"]:focus,
+select[id^="combo-"]:focus {
+  border-color: #2d6cdf;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(45, 108, 223, 0.2);
+}
+
+/* === Personalizações para links no rodapé === */
+.footer-links a {
+  text-decoration: none;
+  color: #2563eb; /* Tailwind: text-blue-600 */
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #1e40af; /* Tailwind: text-blue-800 */
+}
+.footer {
+  background-color: #f8f9fa; /* Cor de fundo clara */
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d; /* Cor de texto cinza */
+  border-top: 1px solid #dee2e6; /* Borda superior sutil */
+}
+
+
+.draggable {
+  touch-action: none; /* Evita gestos de scroll durante o toque */
+}
+
+
+
+/* ==========================================
+Estilo Celular e Tablets
+========================================== */
+
+
+@media screen and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .content {
+    width: 90%;
+    order: 1;
+  }
+
+  .sidebarDireita {
+    order: 2;
+    width: 90%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid #ccc;
+  }
+
+  .sidebarDireita ul,
+  .sidebarDireita li {
+    display: block;
+    text-align: left;
+    margin: 0.25rem 0;    
+  }
+
+  .toggle-sidebar {
+  display: none;
+}
+
+.container {
+  margin: 70px 10px 10px 10px;
+  padding: 5px;
+  width: 95%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.answers {
+  display: flex;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.barra-externa {
+  width: 90%;
+  height: 20px;
+  /* mesma grossura que você pediu */
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+  width: 100%;
+    height: 100%;
+}
+
+
+
+}
+
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.select-container select {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.select-container select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.combobox-select {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 6px;
+}
+
+.quadrado-verde {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #2ecc40;
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+

@@ -1,0 +1,128 @@
+<!-- ==========================================
+Arquivo: index.html
+Descrição: Página principal do Simulado AZ-900
+========================================== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado Do Push ao Deploy</title>
+
+  <!-- Chart.js para os gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF para geração de PDF do certificado -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="robots" content="noindex, nofollow">
+
+</head>
+
+<body>
+
+  <!-- Estrutura Principal -->
+  <div class="container">
+
+    <!-- Barra Lateral Esquerda de Questões -->
+    <div class="sidebar">
+      <ul id="listaQuestoes"></ul>
+    </div>
+
+    <!-- Área de Conteúdo -->
+    <div class="content">
+      <button id="toggleSidebar" class="toggle-sidebar">
+        <p id="arrow" class="arrow">⮜</p>
+      </button> <!-- seta apontando para a esquerda -->
+      <div id="progressoContainer">
+        <span id="textoProgresso"></span>
+        <div class="barra-externa">
+          <div class="barra-interna" id="barraProgresso"></div>
+        </div>
+      </div>
+      <div id="quiz">
+        <div id="questaoContainer"></div>
+      </div>
+
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <button id="voltarBtn" class="btn-voltar hidden">Voltar questão</button>
+      <button id="confirmarBtn" class="btn-confirmar">Confirmar</button>
+      <button id="proximaBtn" class="btn-proxima hidden">Próxima questão</button>
+      <button id="finalizarBtn" class="btn-finalizar hidden">Finalizar</button>
+
+      <!-- Resultado Final -->
+      <div id="resultadoFinal" class="results hidden">
+
+        <p id="pontuacao"></p>
+
+        <!-- Gráfico de Pizza da Pontuação -->
+        <canvas id="graficoResultado"></canvas>
+
+
+        <!-- Gráfico de Barras por Domínio -->
+        <canvas id="graficoDominio"></canvas>
+
+        <p id="tempoTotal"></p>
+
+        <div class="summary" id="resumoQuestoes"></div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="footer">
+    <p>Simulado AZ-900 - Desenvolvido por <a href="https://www.linkedin.com/in/raphaelbarretopro/">Raphael Barreto</a>
+    </p>
+  </footer>
+
+  <!-- Script adicionado no final da página para confirmação -->
+  <script>
+    document.querySelectorAll('.sidebarDireita ul.listaSimulados a').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const urlDestino = this.href;
+        const confirma = confirm("Você perderá a sessão atual do simulado e ingressará em um novo simulado. Deseja continuar?");
+
+        if (confirma) {
+          window.location.href = urlDestino;
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Script principal -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    const arrow = toggleBtn.querySelector('.arrow');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+      content.classList.toggle('expandido');
+
+      if (sidebar.classList.contains('hidden')) {
+        // toggleBtn.style.left = '10px';
+        arrow.classList.remove('arrow-close')
+        arrow.classList.add('arrow-open');
+        // toggleBtn.textContent = '❯' /* '⮜' */; // Setinha para a direita
+      } else {
+        // toggleBtn.style.left = '250px';
+        arrow.classList.remove('arrow-open')
+        arrow.classList.add('arrow-close');
+        // arrow.textContent = '⮜' /* '⮜' */; // Setinha para a esquerda
+      }
+    });
+  </script>
+
+</body>
+
+</html>

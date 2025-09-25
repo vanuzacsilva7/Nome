@@ -1,0 +1,15 @@
+{
+  "name": "Projeto-workshop",
+  "version": "1.0.0",
+  "description": "Projeto HTML, CSS e JS",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --open=./index.html",
+    "build": "echo 'No build needed'"
+  },
+  "author": "Raphael Barreto",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
